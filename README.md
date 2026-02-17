@@ -12,13 +12,19 @@ A simple command-line budget manager built in Python.
 - Input validation for numeric values
 - Formatted currency output
 
+## Updates
+
+ - Add accumulation
+ - Validation
+ - Save-to-file
+
 ## How to Run
 
 Make sure Python is installed.
 
 Run:
 
-python budget_manager_v1.py
+python budget_manager_.py
 
 ## Purpose
 
