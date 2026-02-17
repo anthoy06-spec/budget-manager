@@ -48,19 +48,15 @@ while selection != '7':
         balance = sum(income.values()) - sum(expenses.values())
         print(f'your balance is: ${balance:.2f}')
     elif selection == '6':
-        file = open('budget.txt', 'w')
+        with open('budget.txt', 'w') as file:
+            file.write('INCOME\n')
+            for name, amount in income.items():
+                file.write(f'{name},{amount}\n')
 
-        file.write('INCOME\n')
-        for name, amount in income.items():
-            file.write(f'{name},{amount}\n')
-
-        file.write('EXPENSES\n')
-        for name, amount in expenses.items():
-            file.write(f'{name},{amount}\n')
-
-        file.close()
+            file.write('EXPENSES\n')
+            for name, amount in expenses.items():
+                file.write(f'{name},{amount}\n')
         print('saved!')
-        break
     else:
         print('invalid selection')
     selection = input('enter your selection: 1. add income 2. add expense 3. view expenses 4. view income 5. view balance 6. save 7. exit: ')
